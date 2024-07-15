@@ -315,9 +315,9 @@ return network.registerProtocol("amneziawg", {
 			form.Value,
 			"awg_jc",
 			_("Jc"),
-			_("Junk packet count.")
+			_("Junk packet count. Allowed range is from 1 to 128 inclusive. Recommended range is from 3 to 10 inclusive.")
 		);
-		o.datatype = "uinteger";
+		o.datatype = "range(1,128)";
 		o.optional = true;
 
 		o = s.taboption(
@@ -325,9 +325,9 @@ return network.registerProtocol("amneziawg", {
 			form.Value,
 			"awg_jmin",
 			_("Jmin"),
-			_("Junk packet minimum size.")
+			_("Junk packet minimum size. Jmin < Jmax; Recommended value is 50.")
 		);
-		o.datatype = "uinteger";
+		o.datatype = "range(1,1280)";
 		o.optional = true;
 
 		o = s.taboption(
@@ -335,9 +335,9 @@ return network.registerProtocol("amneziawg", {
 			form.Value,
 			"awg_jmax",
 			_("Jmax"),
-			_("Junk packet maximum size.")
+			_("Junk packet maximum size. Jmin < Jmax ≤ 1280. Recommended value is 1000.")
 		);
-		o.datatype = "uinteger";
+		o.datatype = "range(5,1280)";
 		o.optional = true;
 
 		o = s.taboption(
@@ -345,9 +345,9 @@ return network.registerProtocol("amneziawg", {
 			form.Value,
 			"awg_s1",
 			_("S1"),
-			_("Handshake initiation packet junk header size.")
+			_("Handshake initiation packet junk header size. S1 + 56 ≠ S2. Recommended range is from 15 to 150 inclusive.")
 		);
-		o.datatype = "uinteger";
+		o.datatype = "range(15,150)";
 		o.optional = true;
 
 		o = s.taboption(
@@ -355,9 +355,9 @@ return network.registerProtocol("amneziawg", {
 			form.Value,
 			"awg_s2",
 			_("S2"),
-			_("Handshake response packet junk header size.")
+			_("Handshake response packet junk header size. Recommended range is from 15 to 150 inclusive.")
 		);
-		o.datatype = "uinteger";
+		o.datatype = "range(15,150)";
 		o.optional = true;
 
 		o = s.taboption(
@@ -365,9 +365,9 @@ return network.registerProtocol("amneziawg", {
 			form.Value,
 			"awg_h1",
 			_("H1"),
-			_("Handshake initiation packet type header.")
+			_("Handshake initiation packet type header. Recommended range is from 5 to 2147483647 inclusive.")
 		);
-		o.datatype = "uinteger";
+		o.datatype = "range(5,2147483647)";
 		o.optional = true;
 
 		o = s.taboption(
@@ -375,9 +375,9 @@ return network.registerProtocol("amneziawg", {
 			form.Value,
 			"awg_h2",
 			_("H2"),
-			_("Handshake response packet type header.")
+			_("Handshake response packet type header. Recommended range is from 5 to 2147483647 inclusive.")
 		);
-		o.datatype = "uinteger";
+		o.datatype = "range(5,2147483647)";
 		o.optional = true;
 
 		o = s.taboption(
@@ -385,9 +385,9 @@ return network.registerProtocol("amneziawg", {
 			form.Value,
 			"awg_h3",
 			_("H3"),
-			_("Handshake cookie packet type header.")
+			_("Handshake cookie packet type header. Recommended range is from 5 to 2147483647 inclusive.")
 		);
-		o.datatype = "uinteger";
+		o.datatype = "range(5,2147483647)";
 		o.optional = true;
 
 		o = s.taboption(
@@ -395,9 +395,9 @@ return network.registerProtocol("amneziawg", {
 			form.Value,
 			"awg_h4",
 			_("H4"),
-			_("Transport packet type header.")
+			_("Transport packet type header. Recommended range is from 5 to 2147483647 inclusive.")
 		);
-		o.datatype = "uinteger";
+		o.datatype = "range(5,2147483647)";
 		o.optional = true;
 
 		// -- peers -----------------------------------------------------------------------
